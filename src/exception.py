@@ -1,5 +1,6 @@
 import sys
 import logging
+from src.logger import logging
 
 def error_message_detail(error,error_details:sys):
     _,_,exc_tb=error_details.exc_info()
@@ -17,10 +18,11 @@ class CustomException(Exception):
     def __str__(self):
         return self.error_message
     
-#  FIXED SPACING (Runs perfectly!)
-#to check the exception class is working or not we can run the below code in the same file
-#if __name__ == "__main__":
-# try:
-#    a = 1 / 0
-#  except Exception as e:
-#   raise CustomException(e, sys)
+##FIXED SPACING (Runs perfectly!)
+##to check the exception class is working or not we can run the below code in the same file
+if __name__ == "__main__":
+    try:
+        a = 1/0
+    except Exception as e:
+        logging.info("Divide by zero")
+        raise CustomException(e, sys)
