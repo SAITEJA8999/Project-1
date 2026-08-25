@@ -48,7 +48,7 @@ class ModelTrainer:
             # --- YOUR EXACT PARAMETERS WITH THE SYNTAX FIX ---
             params = {
                 "Decision Tree": {
-                    'criterion': ['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
+                    'criterion': ['squared_error','absolute_error','poisson'],
                 },
                 "Random Forest": {
                     'n_estimators': [8, 16, 32, 64, 128, 256]
@@ -64,7 +64,7 @@ class ModelTrainer:
                     'n_estimators': [8, 16, 32, 64, 128, 256]
                 },
                 "CatBoosting Regressor": {
-                    'depth':,  # <-- Fixed the empty space here
+                    'depth': [6, 8, 10],
                     'learning_rate': [0.01, 0.05, 0.1],
                     'iterations': [30, 50, 100]
                 },
